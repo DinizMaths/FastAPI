@@ -28,13 +28,13 @@ async def read_book_by_title(book_title):
       return book
 
 @app.get("/books/?author={book_author}")
-async def read_book_by_title(book_author):
+async def read_book_by_author(book_author):
   for book in BOOKS:
     if book.get("author").casefold() == book_author.casefold():
       return book
 
 @app.get("/books/?category={book_category}")
-async def read_book_by_title(book_author):
+async def read_book_by_category(book_category):
   for book in BOOKS:
     if book.get("category").casefold() == book_category.casefold():
       return book
