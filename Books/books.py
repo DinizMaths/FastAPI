@@ -21,8 +21,20 @@ async def home():
 async def read_all_books():
   return BOOKS
 
-@app.get("/books/{book_title}")
-async def read_book_by_id(book_title):
+@app.get("/books/?title={book_title}")
+async def read_book_by_title(book_title):
   for book in BOOKS:
     if book.get("title").casefold() == book_title.casefold():
+      return book
+
+@app.get("/books/?author={book_author}")
+async def read_book_by_title(book_author):
+  for book in BOOKS:
+    if book.get("author").casefold() == book_author.casefold():
+      return book
+
+@app.get("/books/?category={book_category}")
+async def read_book_by_title(book_author):
+  for book in BOOKS:
+    if book.get("category").casefold() == book_category.casefold():
       return book
