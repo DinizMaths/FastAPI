@@ -13,6 +13,10 @@ BOOKS = [
 
 app = FastAPI()
 
+@app.get("/")
+async def home():
+  return "Hello World!"
+
 @app.get("/books")
 async def read_all_books():
   return BOOKS
