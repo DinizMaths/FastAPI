@@ -14,15 +14,15 @@ Este repositório contém o código e materiais para o curso de FastAPI _[FastAP
 - [Conteúdo do Curso](#conteúdo-do-curso)
 - [Como Começar](#como-começar)
 
-# 🇺🇸 About FastAPI {#about-fastapi}
+# 🇺🇸 About FastAPI {about-fastapi}
 
 FastAPI is a high-performance, easy-to-use web framework for building APIs with Python. It is based on standard Python type hints, allowing for automatic data validation, serialization, and documentation generation. FastAPI is built on top of Starlette and Pydantic, combining the best features of these libraries to provide a seamless development experience.
 
-# 🇧🇷 Sobre o FastAPI {#sobre-o-fastapi}
+# 🇧🇷 Sobre o FastAPI {sobre-o-fastapi}
 
 FastAPI é um framework web de alto desempenho e fácil de usar para construir APIs com Python. Ele é baseado em anotações de tipos padrão do Python, permitindo validação automática de dados, serialização e geração de documentação. O FastAPI é construído sobre o Starlette e o Pydantic, combinando as melhores características dessas bibliotecas para proporcionar uma experiência de desenvolvimento perfeita.
 
-# 🇺🇸 Course Content {#course-content}
+# 🇺🇸 Course Content {course-content}
 
 The course covers a wide range of topics, including:
 
@@ -43,7 +43,7 @@ The course covers a wide range of topics, including:
 - Deploy your application so the world can use it
 - And more!
 
-# 🇧🇷 Conteúdo do Curso {#conteúdo-do-curso}
+# 🇧🇷 Conteúdo do Curso {conteúdo-do-curso}
 
 O curso aborda uma ampla variedade de tópicos, incluindo:
 
@@ -64,7 +64,7 @@ O curso aborda uma ampla variedade de tópicos, incluindo:
 - Implantar sua aplicação para que o mundo possa usá-la
 - E muito mais!
 
-# 🇺🇸 Getting Started {#getting-started}
+# 🇺🇸 Getting Started {getting-started}
 
 To get started with this project, follow these steps:
 
@@ -75,7 +75,7 @@ To get started with this project, follow these steps:
     - **Books 2**: `uvicorn Books2.books:app --reload`
 4. Open your browser and visit `http://localhost:8000` to access the API.
 
-# 🇧🇷 Como Começar {#como-começar}
+# 🇧🇷 Como Começar {como-começar}
 
 Para começar com este projeto, siga estes passos:
 
