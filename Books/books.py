@@ -13,6 +13,8 @@ BOOKS = [
 
 app = FastAPI()
 
+
+# === GET ===
 @app.get("/")
 async def home():
   return "Hello World!"
@@ -52,11 +54,13 @@ async def read_book_by_category(book_author: str, book_category: str):
   return books if len(books) > 0 else "Not Found"
 
 
+# === POST ===
 @app.post("/books/create_book")
 async def create_book(new_book=Body()):
   BOOKS.append(new_book)
 
 
+# === PUT ===
 @app.put("/books/update_book/")
 async def update_book(updated_book=Body()):
   for i in range(len(BOOKS)):
@@ -64,6 +68,7 @@ async def update_book(updated_book=Body()):
       BOOKS[i] = updated_book
 
 
+# === DELETE ===
 @app.delete("/books/dete_book/{book_title}")
 async def delete_book(book_title):
   for i, book in enumerate(BOOKS):
