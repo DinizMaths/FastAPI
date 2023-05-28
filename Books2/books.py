@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Path
+from fastapi import FastAPI, Path, Query
 from pydantic import BaseModel, Field
 
 from typing import Optional
@@ -25,7 +25,7 @@ class BookRequest(BaseModel):
   title: str          = Field(min_length=3)
   author: str         = Field(min_length=2)
   description: str    = Field(min_length=1, max_length=100)
-  rating: int         = Field(ge=0, le=5) # 0 <= x <= 5
+  rating: int         = Field(ge=1, le=5) # 1 <= x <= 5
   published_date: int = Field(ge=1900)
 
   class Config:
@@ -67,7 +67,7 @@ async def read_book(book_id: int = Path(ge=0)):
       return book
 
 @app.get("/books/")
-async def read_book_by_rating(book_rating: int):
+async def read_book_by_rating(book_rating: int = Query(ge=1, le=5)):
   books = []
 
   for book in BOOKS:
@@ -77,7 +77,7 @@ async def read_book_by_rating(book_rating: int):
   return books
 
 @app.get("/book/publish/")
-async def read_books_by_publish_date(published_date: int):
+async def read_books_by_publish_date(published_date: int = Query(ge=1900)):
   books = []
 
   for book in BOOKS:
