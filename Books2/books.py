@@ -3,6 +3,8 @@ from pydantic import BaseModel, Field
 
 from typing import Optional
 
+from starlette import status
+
 
 class Book:
   id: int
@@ -52,15 +54,15 @@ BOOKS = [
 app = FastAPI()
 
 
-@app.get("/")
+@app.get("/", status_code=status.HTTP_200_OK)
 async def home():
   return "Books 2"
 
-@app.get("/books")
+@app.get("/books/", status_code=status.HTTP_200_OK)
 async def read_all_books():
   return BOOKS
 
-@app.get("/books/{book_id}")
+@app.get("/books/{book_id}", status_code=status.HTTP_200_OK)
 async def read_book(book_id: int = Path(ge=0)):
   for book in BOOKS:
     if book.id == book_id:
@@ -68,7 +70,7 @@ async def read_book(book_id: int = Path(ge=0)):
 
   raise HTTPException(status_code=404, detail="Item Not Found!")
 
-@app.get("/books/")
+@app.get("/books/", status_code=status.HTTP_200_OK)
 async def read_book_by_rating(book_rating: int = Query(ge=1, le=5)):
   books = []
 
@@ -78,7 +80,7 @@ async def read_book_by_rating(book_rating: int = Query(ge=1, le=5)):
   
   return books
 
-@app.get("/book/publish/")
+@app.get("/book/publish/", status_code=status.HTTP_200_OK)
 async def read_books_by_publish_date(published_date: int = Query(ge=1900)):
   books = []
 
@@ -88,7 +90,7 @@ async def read_books_by_publish_date(published_date: int = Query(ge=1900)):
   
   return books
 
-@app.post("/create-book")
+@app.post("/create-book", status_code=status.HTTP_201_CREATED)
 async def create_book(book_request: BookRequest):
   new_book = Book(**book_request.dict())
 
@@ -99,7 +101,7 @@ def find_book_id(book: Book):
   
   return book
 
-@app.put("/books/update_book")
+@app.put("/books/update_book", status_code=status.HTTP_204_NO_CONTENT)
 async def update_book(book: BookRequest):
   book_changed = False
 
@@ -113,7 +115,7 @@ async def update_book(book: BookRequest):
   
 
 
-@app.delete("/books/{book_id}")
+@app.delete("/books/{book_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_book(book_id: int = Path(ge=0)):
   book_changed = False
 
