@@ -19,11 +19,21 @@ class Book:
     self.rating = rating
 
 class BookRequest(BaseModel):
-  id: Optional[int]
-  title: str       = Field(min_length=3)
-  author: str      = Field(min_length=2)
-  description: str = Field(min_length=1, max_length=100)
-  rating: int      = Field(ge=0, le=5) # 0 <= x <= 5
+  id: Optional[int] = Field(title="id is not needed")
+  title: str        = Field(min_length=3)
+  author: str       = Field(min_length=2)
+  description: str  = Field(min_length=1, max_length=100)
+  rating: int       = Field(ge=0, le=5) # 0 <= x <= 5
+
+  class Config:
+    schema_extra = {
+      "example": {
+        "title": "A new book",
+        "author": "codingwithroby",
+        "description": "A new description",
+        "rating": 5
+      }
+    }
 
 
 BOOKS = [
