@@ -29,6 +29,7 @@ class TodoRequest(BaseModel):
   priority: int = Field(ge=1, le=5)
   complete: bool
 
+
 @app.get("/", status_code=status.HTTP_200_OK)
 async def read_all(db: db_depencency):
   return db.query(Todos).all()
@@ -42,7 +43,8 @@ async def read_todo(db: db_depencency, todo_id: int = Path(gt=0)):
   
   raise HTTPException(status_code=404, detail="Todo Not Found!")
 
-@app.post("/todos", status_code=status.HTTP_201_CREATED)
+
+@app.post("/todo", status_code=status.HTTP_201_CREATED)
 async def create_todo(db: db_depencency, todo_request: TodoRequest):
   todo_model = Todos(**todo_request.dict())
 

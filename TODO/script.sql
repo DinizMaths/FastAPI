@@ -1,9 +1,9 @@
 CREATE TABLE todos (
-  id INTEGER NOT NULL, 
-  title VARCHAR, 
-  description VARCHAR, 
-  priority INTEGER, 
-  complete BOOLEAN, 
+  id INTEGER NOT NULL,
+  title VARCHAR,
+  description VARCHAR,
+  priority INTEGER,
+  complete BOOLEAN,
   PRIMARY KEY (id)
 );
 
