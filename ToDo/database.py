@@ -4,9 +4,9 @@ from sqlalchemy.ext.declarative import declarative_base
 
 
 YOUR_POSTGRESQL_PASSWORD = ""
-YOUR_POSTGRESQL_SERVER   = ""
+YOUR_POSTGRESQL_DATABASE = ""
 
-SQLALCHEMY_DATABASE_URL = f"postgresql://postgres:{YOUR_POSTGRESQL_PASSWORD}@localhost/{YOUR_POSTGRESQL_SERVER}"
+SQLALCHEMY_DATABASE_URL = f"postgresql://postgres:{YOUR_POSTGRESQL_PASSWORD}@localhost/{YOUR_POSTGRESQL_DATABASE}"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
