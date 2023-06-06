@@ -65,7 +65,7 @@ To get started with this project, follow these steps:
 3. Run the development server:
     - **Books**: `uvicorn Books.books:app --reload`
     - **Books 2**: `uvicorn Books2.books:app --reload`
-    - **ToDo**: `uvicorn TODO.main:app --reload`
+    - **ToDo**: `uvicorn ToDo.main:app --reload`
 4. Open your browser and visit `http://localhost:8000` to access the API.
 
 # 🇧🇷 Como Começar
@@ -77,5 +77,5 @@ Para começar com este projeto, siga estes passos:
 3. Execute o servidor de desenvolvimento:
     - **Books**: `uvicorn Books.books:app --reload`
     - **Books 2**: `uvicorn Books2.books:app --reload`
-    - **ToDo**: `uvicorn TODO.main:app --reload`
+    - **ToDo**: `uvicorn ToDo.main:app --reload`
 4. Abra seu navegador e visite `http://localhost:8000` para acessar a API.

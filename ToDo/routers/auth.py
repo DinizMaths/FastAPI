@@ -21,7 +21,7 @@ router = APIRouter(
    tags=["auth"]
 )
 
-SECRET_KEY = "6f8998284c4a43209f7b89c1af0c07880627f0c6d9687a96c368a7aafa06eef1"
+SECRET_KEY = "YOUR_SECRET_KEY_FOR_JWT"
 ALGORITHM  = "HS256"
 
 bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
