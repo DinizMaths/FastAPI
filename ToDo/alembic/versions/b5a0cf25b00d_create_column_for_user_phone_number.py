@@ -17,7 +17,7 @@ depends_on = None
 
 
 def upgrade() -> None:
-    op.add_column("users", sa.Column("phone_number", sa.String(), nullable=True))
+    op.add_column("users", sa.Column("phone_number", sa.String(), nullable=False))
 
 
 def downgrade() -> None:

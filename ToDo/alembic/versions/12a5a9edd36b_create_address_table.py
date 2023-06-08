@@ -21,7 +21,7 @@ def upgrade() -> None:
         "address",
         sa.Column("id",          sa.Integer(), nullable=False, primary_key=True),
         sa.Column("address1",    sa.String(),  nullable=False),
-        sa.Column("address2",    sa.String(),  nullable=False),
+        sa.Column("address2",    sa.String(),  nullable=True),
         sa.Column("city",        sa.String(),  nullable=False),
         sa.Column("state",       sa.String(),  nullable=False),
         sa.Column("country",     sa.String(),  nullable=False),

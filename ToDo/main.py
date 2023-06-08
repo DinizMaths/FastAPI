@@ -8,7 +8,7 @@ from sqlalchemy.orm import Session
 from typing         import Annotated
 from starlette      import status
 
-from routers import auth, todos, admin, users
+from routers import auth, todos, admin, users, address
 
 
 app = FastAPI()
@@ -19,3 +19,4 @@ app.include_router(auth.router)
 app.include_router(todos.router)
 app.include_router(admin.router)
 app.include_router(users.router)
+app.include_router(address.router)
