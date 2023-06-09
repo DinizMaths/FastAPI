@@ -33,6 +33,7 @@ class AddressRequest(BaseModel):
   state:       str
   country:     str
   postal_code: str
+  apt_num:     Optional[int]
 
 
 @router.post("/")
@@ -48,6 +49,7 @@ async def create_address(address: AddressRequest, user: user_dependency, db: db_
   address_model.state       = address.state
   address_model.country     = address.country
   address_model.postal_code = address.postal_code
+  address_model.apt_num     = address.apt_num
 
   db.add(address_model)
   db.flush()

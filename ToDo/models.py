@@ -8,7 +8,7 @@ class Users(Base):
   __tablename__ = "users"
 
   id              = Column(Integer, primary_key=True, index=True)
-  email           = Column(String, unique=True)
+  email           = Column(String, unique=True, nullable=True)
   username        = Column(String, unique=True)
   first_name      = Column(String)
   last_name       = Column(String)
@@ -43,5 +43,6 @@ class Address(Base):
   state       = Column(String)
   country     = Column(String)
   postal_code = Column(String)
+  apt_num     = Column(Integer)
 
   user_address = relationship("Users", back_populates="address")
