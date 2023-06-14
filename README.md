@@ -66,7 +66,9 @@ To get started with this project, follow these steps:
     - **Books**: `uvicorn Books.books:app --reload`
     - **Books 2**: `uvicorn Books2.books:app --reload`
     - **ToDo**: `uvicorn ToDo.main:app --reload`
+    - **ToDo FullStack**: `uvicorn ToDoFullStack.main:app --reload`
 4. Open your browser and visit `http://localhost:8000` to access the API.
+5. Open your browser and visit `http://localhost:8000/docs` to access the API Swagger.
 
 # 🇧🇷 Como Começar
 
@@ -78,4 +80,6 @@ Para começar com este projeto, siga estes passos:
     - **Books**: `uvicorn Books.books:app --reload`
     - **Books 2**: `uvicorn Books2.books:app --reload`
     - **ToDo**: `uvicorn ToDo.main:app --reload`
+    - **ToDo FullStack**: `uvicorn ToDoFullStack.main:app --reload`
 4. Abra seu navegador e visite `http://localhost:8000` para acessar a API.
+5. Abra seu navegador e visite `http://localhost:8000/docs` para acessar o Swagger da API.

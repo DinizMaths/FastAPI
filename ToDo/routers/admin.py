@@ -15,11 +15,12 @@ router = APIRouter(
 
 
 def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+  db = SessionLocal()
+  
+  try:
+    yield db
+  finally:
+    db.close()
 
 
 db_dependency   = Annotated[Session, Depends(get_db)]
