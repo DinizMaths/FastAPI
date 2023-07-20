@@ -83,3 +83,4 @@ Para começar com este projeto, siga estes passos:
     - **ToDo FullStack**: `uvicorn ToDoFullStack.main:app --reload`
 4. Abra seu navegador e visite `http://localhost:8000` para acessar a API.
 5. Abra seu navegador e visite `http://localhost:8000/docs` para acessar o Swagger da API.
+
